@@ -7,6 +7,12 @@ require('dotenv').config()
 const router = require('./router')
 const { errorMsg } = require('./utils/apiResponse')
 app.use(express.json())
+app.use('/', (req, res) => {
+    res.json({
+        status: true,
+        message: 'Hello'
+    })
+})
 app.use(router)
 app.use((error, req, res, next) => {
     console.log('Error caught Globally', error)
