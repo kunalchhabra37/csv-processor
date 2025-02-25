@@ -5,6 +5,5 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 RUN node sync.js
-# CMD ["node", "sync.js"]
 EXPOSE 3000
 CMD ["npm", "run", "start"]

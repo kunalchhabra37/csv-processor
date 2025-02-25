@@ -22,8 +22,6 @@ const handleUpload = async (req, res, next) => {
 
 const fetchRequestStatus = async (req, res, next) => {
     try {
-        // fetch request status
-        // if status == 3, fetch file and return
         const result = await fetchRequestInfo(req.params.id)
         if(!result.status){
             return errorMsg(res, next, result.status, result.data, result.message, 404)
